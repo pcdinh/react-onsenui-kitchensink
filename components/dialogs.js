@@ -4,6 +4,21 @@ const Ons = require('react-onsenui');
 const ons = require('onsenui');
 
 class Dialogs extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dialogOpen: false
+    };
+  }
+
+  toggleDialog() {
+    console.log('toggle');
+    this.setState({
+      dialogOpen: !this.state.dialogOpen
+    });
+  }
+
   render() {
     return (
       <Ons.Page>
@@ -13,7 +28,18 @@ class Dialogs extends React.Component {
 
         <Ons.List
           dataSource={[
-            <Ons.ListHeader>Notifications</Ons.ListHeader>,
+            <Ons.ListItem
+              tappable
+              onClick={this.toggleDialog.bind(this)}>
+              Show dialog ({this.state.dialogOpen ? 'open' : 'closed'})
+            </Ons.ListItem>
+          ]}
+          renderHeader={() => <Ons.ListHeader>Dialogs</Ons.ListHeader>}
+          renderRow={(row) => row}
+        />
+
+        <Ons.List
+          dataSource={[
             <Ons.ListItem
               tappable
               onClick={ons.notification.alert.bind(null, 'Hello, world!')}>
@@ -35,8 +61,20 @@ class Dialogs extends React.Component {
               Prompt dialog
             </Ons.ListItem>
           ]}
+          renderHeader={() => <Ons.ListHeader>Notifications</Ons.ListHeader>}
           renderRow={(row) => row}
         />
+
+        <Ons.Dialog
+          style={{textAlign: 'center'}}
+          isOpen={this.state.dialogOpen}
+          onCancel={this.toggleDialog.bind(this)}
+          cancelable>
+          <p>I am a dialog!</p>
+          <p>
+            <Ons.Button onClick={this.toggleDialog.bind(this)}>Close me!</Ons.Button>
+          </p>
+        </Ons.Dialog>
       </Ons.Page>
     );
   }

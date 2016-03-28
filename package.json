@@ -35,7 +35,7 @@
     "react": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
     "react-dom": "^0.14.7",
-    "onsenui": "git://github.com/OnsenUI/OnsenUI-dist.git#2.0.0-beta.7+react",
+    "onsenui": "git://github.com/OnsenUI/OnsenUI-dist.git#2.0.0-react.1",
     "react-onsenui": "0.0.5",
     "reactify": "^1.1.1",
     "watchify": "^3.7.0"

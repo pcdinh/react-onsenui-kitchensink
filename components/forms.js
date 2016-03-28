@@ -58,7 +58,7 @@ class Forms extends React.Component {
               </div>
               <div className="right">
                 <Ons.Switch
-                  checked={this.state.switchEnabled ? 'checked' : null}
+                  checked={this.state.switchEnabled}
                   onChange={this.handleSwitchChange.bind(this)}
                 />
               </div>
@@ -84,7 +84,7 @@ class Forms extends React.Component {
             return (
               <Ons.ListItem tappable>
                 <div className="left">
-                  <Ons.Input input-id={'radio' + index} name="vegetable" onChange={this.setVegetable.bind(this, vegetable)} checked={this.state.selectedVegetable === vegetable ? '' : null} type="radio" />
+                  <Ons.Input input-id={'radio' + index} name="vegetable" onChange={this.setVegetable.bind(this, vegetable)} checked={this.state.selectedVegetable === vegetable} type="radio" />
                 </div>
                 <label htmlFor={'radio' + index} className="center">
                   {vegetable}
