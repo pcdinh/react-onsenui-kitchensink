@@ -22,18 +22,27 @@ class PullToRefresh extends React.Component {
   }
 
   handleChange(event) {
-    console.log("HI");
     this.setState({
       pullHookState: event.state
     });
   }
 
   handleLoad(done) {
-    setTimeout(() => {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+
+    this.timeout = setTimeout(() => {
       this.setState({
         data: this.getRandomData()
       }, done);
     }, 1000);
+  }
+
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
   }
 
   render() {
@@ -60,7 +69,7 @@ class PullToRefresh extends React.Component {
           <div className="center">Pull to refresh</div>
         </Ons.Toolbar>
 
-        <p>Pull down to generated some random numbers.</p>
+        <p>Pull down to generate some random numbers.</p>
 
         <Ons.List
           dataSource={this.state.data}
