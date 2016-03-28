@@ -4,6 +4,8 @@ const ons = require('onsenui');
 
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
 
+const PullToRefresh = require('./pullToRefresh');
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -38,6 +40,10 @@ class Home extends React.Component {
     }
   }
 
+  gotoComponent(component) {
+    this.props.navigator.pushPage({comp: component});
+  }
+
   render() {
     return (
       <Ons.Page>
@@ -68,6 +74,19 @@ class Home extends React.Component {
               </Ons.ListItem>
             );
           }}
+        />
+
+        <Ons.List
+          renderHeader={() => <Ons.ListHeader>Components</Ons.ListHeader>}
+          dataSource={[{
+            name: 'Pull to refresh',
+            component: PullToRefresh
+          }]}
+          renderRow={(row) =>
+            <Ons.ListItem tappable onClick={this.gotoComponent.bind(this, row.component)}>
+              {row.name}
+            </Ons.ListItem>
+          }
         />
       </Ons.Page>
     );
