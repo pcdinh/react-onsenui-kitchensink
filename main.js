@@ -4,6 +4,7 @@ const ReactDOM = require('react-dom');
 const ons = require('onsenui');
 const Ons = require('react-onsenui');
 
+const Home = require('./components/home');
 const Dialogs = require('./components/dialogs');
 const Forms = require('./components/forms');
 const Animations = require('./components/animations');
@@ -13,6 +14,10 @@ window.ons = ons;
 var Tabs = React.createClass({
   renderTabs: function() {
     return [
+      {
+        content: <Home navigator={this.props.navigator} />,
+        tab: ons.platform.isAndroid() ? <Ons.Tab label="Home" /> : <Ons.Tab label="Home" icon="ion-ios-home-outline" />
+      },
       {
         content: <Dialogs navigator={this.props.navigator} />,
         tab: ons.platform.isAndroid() ? <Ons.Tab label="Dialogs" /> : <Ons.Tab label="Dialogs" icon="ion-ios-albums-outline" />
