@@ -3,6 +3,8 @@ const React = require('react');
 const Ons = require('react-onsenui');
 const ons = require('onsenui');
 
+const Popovers = require('./popovers');
+
 class Dialogs extends React.Component {
   constructor(props) {
     super(props);
@@ -13,10 +15,13 @@ class Dialogs extends React.Component {
   }
 
   toggleDialog() {
-    console.log('toggle');
     this.setState({
       dialogOpen: !this.state.dialogOpen
     });
+  }
+
+  showPopovers() {
+    this.props.navigator.pushPage({comp: Popovers});
   }
 
   render() {
@@ -32,6 +37,9 @@ class Dialogs extends React.Component {
               tappable
               onClick={this.toggleDialog.bind(this)}>
               Show dialog ({this.state.dialogOpen ? 'open' : 'closed'})
+            </Ons.ListItem>,
+            <Ons.ListItem onClick={this.showPopovers.bind(this)}>
+              Popovers
             </Ons.ListItem>
           ]}
           renderHeader={() => <Ons.ListHeader>Dialogs</Ons.ListHeader>}
@@ -72,7 +80,7 @@ class Dialogs extends React.Component {
           cancelable>
           <p>I am a dialog!</p>
           <p>
-            <Ons.Button onClick={this.toggleDialog.bind(this)}>Close me!</Ons.Button>
+            <Ons.Button disabled={!this.state.dialogOpen} onClick={this.toggleDialog.bind(this)}>Close me!</Ons.Button>
           </p>
         </Ons.Dialog>
       </Ons.Page>
