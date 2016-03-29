@@ -13,7 +13,9 @@ class SpeedDial extends React.Component {
         <p>A speed dial is a Floating action button that expands into a menu.</p>
 
         <Ons.SpeedDial position="right bottom" direction="up">
-          <Ons.Icon icon="md-car"></Ons.Icon>
+          <Ons.Fab>
+            <Ons.Icon icon="md-car"></Ons.Icon>
+          </Ons.Fab>
           <Ons.SpeedDialItem>A</Ons.SpeedDialItem>
           <Ons.SpeedDialItem>B</Ons.SpeedDialItem>
           <Ons.SpeedDialItem>C</Ons.SpeedDialItem>
