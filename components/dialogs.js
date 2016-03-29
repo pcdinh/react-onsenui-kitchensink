@@ -1,9 +1,9 @@
-const React = require('react');
+import React from 'react';
 
-const Ons = require('react-onsenui');
-const ons = require('onsenui');
+import ons from 'onsenui';
+import Ons from 'react-onsenui';
 
-const Popovers = require('./popovers');
+import Popovers from './popovers';
 
 class Dialogs extends React.Component {
   constructor(props) {

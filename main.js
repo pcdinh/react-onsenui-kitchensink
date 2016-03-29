@@ -1,15 +1,13 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const ons = require('onsenui');
-const Ons = require('react-onsenui');
+import ons from 'onsenui';
+import Ons from 'react-onsenui';
 
-const Home = require('./components/home');
-const Dialogs = require('./components/dialogs');
-const Forms = require('./components/forms');
-const Animations = require('./components/animations');
-
-window.ons = ons;
+import Home from './components/home';
+import Dialogs from './components/dialogs';
+import Forms from './components/forms';
+import Animations from './components/animations';
 
 var Tabs = React.createClass({
   renderTabs: function() {

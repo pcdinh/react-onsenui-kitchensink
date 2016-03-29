@@ -1,7 +1,7 @@
-const React = require('react');
+import React from 'react';
 
-const Ons = require('react-onsenui');
-const ons = require('onsenui');
+import ons from 'onsenui';
+import Ons from 'react-onsenui';
 
 const capitalize = (str) =>
   str.replace(/^[a-z]/, (c) => c.toUpperCase());

@@ -1,7 +1,7 @@
-const React = require('react');
+import React from 'react';
 
-const Ons = require('react-onsenui');
-const ons = require('onsenui');
+import ons from 'onsenui';
+import Ons from 'react-onsenui';
 
 class Forms extends React.Component {
   constructor(props) {

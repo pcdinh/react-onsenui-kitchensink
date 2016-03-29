@@ -1,7 +1,6 @@
-const React = require('react');
-const Ons = require('react-onsenui');
-
-const ons = require('onsenui');
+import React from 'react';
+import ons from 'onsenui';
+import Ons from 'react-onsenui';
 
 class InfiniteScroll extends React.Component {
   renderRow(index) {

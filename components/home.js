@@ -1,13 +1,14 @@
-const React = require('react');
-const Ons = require('react-onsenui');
-const ons = require('onsenui');
+import React from 'react';
+
+import ons from 'onsenui';
+import Ons from 'react-onsenui';
+
+import PullToRefresh from './pullToRefresh';
+import InfiniteScroll from './infiniteScroll';
+import FloatingActionButton from './floatingActionButton';
+import SpeedDial from './speedDial';
 
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
-
-const PullToRefresh = require('./pullToRefresh');
-const InfiniteScroll = require('./infiniteScroll');
-const FloatingActionButton = require('./floatingActionButton');
-const SpeedDial = require('./speedDial');
 
 class Home extends React.Component {
   constructor(props) {

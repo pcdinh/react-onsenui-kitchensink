@@ -1,5 +1,5 @@
-const React = require('react');
-const Ons = require('react-onsenui');
+import React from 'react';
+import Ons from 'react-onsenui';
 
 class FloatingActionButton extends React.Component {
   render() {
