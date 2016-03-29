@@ -5,6 +5,8 @@ const ons = require('onsenui');
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
 
 const PullToRefresh = require('./pullToRefresh');
+const FloatingActionButton = require('./floatingActionButton');
+const SpeedDial = require('./speedDial');
 
 class Home extends React.Component {
   constructor(props) {
@@ -81,6 +83,12 @@ class Home extends React.Component {
           dataSource={[{
             name: 'Pull to refresh',
             component: PullToRefresh
+          }, {
+            name: 'Floating action button',
+            component: FloatingActionButton
+          }, {
+            name: 'Speed dial',
+            component: SpeedDial
           }]}
           renderRow={(row) =>
             <Ons.ListItem tappable onClick={this.gotoComponent.bind(this, row.component)}>
