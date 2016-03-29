@@ -33,6 +33,9 @@ class Popovers extends React.Component {
           <div className="left">
             <Ons.BackButton>Back</Ons.BackButton>
           </div>
+          <div className="center">
+            Popovers
+          </div>
         </Ons.Toolbar>
 
         <div style={{textAlign: 'center'}}>
