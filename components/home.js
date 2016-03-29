@@ -5,6 +5,7 @@ const ons = require('onsenui');
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
 
 const PullToRefresh = require('./pullToRefresh');
+const InfiniteScroll = require('./infiniteScroll');
 const FloatingActionButton = require('./floatingActionButton');
 const SpeedDial = require('./speedDial');
 
@@ -83,6 +84,9 @@ class Home extends React.Component {
           dataSource={[{
             name: 'Pull to refresh',
             component: PullToRefresh
+          }, {
+            name: 'Infinite scroll',
+            component: InfiniteScroll
           }, {
             name: 'Floating action button',
             component: FloatingActionButton
