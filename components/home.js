@@ -53,7 +53,7 @@ class Home extends React.Component {
       <Ons.Page>
         <Ons.Toolbar><div className="center">Home</div></Ons.Toolbar>
 
-        <p>
+        <p style={{padding: '0 15px'}}>
           This is a kitchen sink example that shows off the React extension for Onsen UI.
         </p>
 
