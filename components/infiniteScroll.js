@@ -5,7 +5,7 @@ import Ons from 'react-onsenui';
 class InfiniteScroll extends React.Component {
   renderRow(index) {
     return (
-      <Ons.ListItem>{'Item ' + index}</Ons.ListItem>
+      <div>{'Item ' + index}</div>
     );
   }
 
