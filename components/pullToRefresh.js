@@ -69,7 +69,7 @@ class PullToRefresh extends React.Component {
           <div className="center">Pull to refresh</div>
         </Ons.Toolbar>
 
-        <p>Pull down to generate some random numbers.</p>
+        <p style={{padding: '0 15px'}}>Pull down to generate some random numbers.</p>
 
         <Ons.List
           dataSource={this.state.data}
