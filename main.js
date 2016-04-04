@@ -9,6 +9,8 @@ import Dialogs from './components/dialogs';
 import Forms from './components/forms';
 import Animations from './components/animations';
 
+window.ons = ons;
+
 var Tabs = React.createClass({
   renderTabs: function() {
     return [
