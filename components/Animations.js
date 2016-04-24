@@ -91,7 +91,7 @@ class Animations extends React.Component {
       <Page renderToolbar={this.renderToolbar}>
         <List
           renderHeader={() => <ListHeader>Transitions</ListHeader>}
-          dataSource={['none', 'fade', 'slide']}
+          dataSource={['none', 'fade', 'slide', 'lift']}
           renderRow={(row) =>
             <ListItem
               tappable
