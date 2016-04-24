@@ -20,11 +20,32 @@ class PullToRefresh extends React.Component {
     }
   }
 
+  getRandomName() {
+    const names = ['Oscar', 'Max', 'Tiger', 'Sam', 'Misty', 'Simba', 'Coco', 'Chloe', 'Lucy', 'Missy'];
+    return names[Math.floor(Math.random() * names.length)];
+  }
+
+  getRandomUrl() {
+    var width = 40 + Math.floor(20 * Math.random());
+    var height= 40 + Math.floor(20 * Math.random());
+
+    return `https://placekitten.com/g/${width}/${height}`;
+  }
+
+  getRandomKitten() {
+    var name = this.getRandomName();
+
+    return {
+      name: this.getRandomName(),
+      url: this.getRandomUrl()
+    };
+  }
+
   getRandomData() {
     const data = [];
 
     for (let i = 0; i < 20; i++) {
-      data.push(Math.round(100*Math.random()));
+      data.push(this.getRandomKitten());
     }
 
     return data;
@@ -63,6 +84,19 @@ class PullToRefresh extends React.Component {
     );
   }
 
+  renderRow(data) {
+    return (
+      <ListItem>
+        <div className='left'>
+          <img className='list__item__thumbnail' src={data.url} />
+        </div>
+        <div className='center'>
+          {data.name}
+        </div>
+      </ListItem>
+    );
+  }
+
   render() {
     let content;
     const state = this.state.pullHookState;
@@ -82,12 +116,11 @@ class PullToRefresh extends React.Component {
         <PullHook onChange={this.handleChange.bind(this)} onLoad={this.handleLoad.bind(this)}>
           {content}
         </PullHook>
-        <p style={{padding: '0 15px'}}>Pull down to generate some random numbers.</p>
 
         <List
           dataSource={this.state.data}
-          renderHeader={() => <ListHeader>Data</ListHeader>}
-          renderRow={(row) => <ListItem>{row}</ListItem>}
+          renderHeader={() => <ListHeader>Pull down to refresh</ListHeader>}
+          renderRow={this.renderRow}
         />
       </Page>
     );
