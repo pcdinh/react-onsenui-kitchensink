@@ -97,7 +97,7 @@ class Forms extends React.Component {
             return (
               <ListItem tappable>
                 <label className="left">
-                  <Input input-id={'radio' + index} name="vegetable" onChange={this.setVegetable.bind(this, vegetable)} checked={this.state.selectedVegetable === vegetable} type="radio" />
+                  <Input inputId={'radio' + index} name="vegetable" onChange={this.setVegetable.bind(this, vegetable)} checked={this.state.selectedVegetable === vegetable} type="radio" />
                 </label>
                 <label htmlFor={'radio' + index} className="center">
                   {vegetable}
@@ -114,7 +114,7 @@ class Forms extends React.Component {
             return (
               <ListItem tappable>
                 <label className="left">
-                  <Input input-id={'checkbox' + index} type="checkbox" />
+                  <Input inputId={'checkbox' + index} type="checkbox" />
                 </label>
                 <label htmlFor={'checkbox' + index} className="center">
                   {color}
