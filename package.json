@@ -37,7 +37,7 @@
     "onsenui": "2.0.0-beta.10",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-onsenui": "0.0.19",
+    "react-onsenui": "0.0.20",
     "watchify": "^3.7.0"
   }
 }
