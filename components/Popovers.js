@@ -32,18 +32,22 @@ class Popovers extends React.Component {
     return this.refs.target;
   }
 
+  renderToolbar() {
+    return (
+      <Toolbar>
+        <div className='left'>
+          <BackButton>Back</BackButton>
+        </div>
+        <div className='center'>
+          Popovers
+        </div>
+      </Toolbar>
+    );
+  }
+
   render() {
     return (
-      <Page>
-        <Toolbar>
-          <div className="left">
-            <BackButton>Back</BackButton>
-          </div>
-          <div className="center">
-            Popovers
-          </div>
-        </Toolbar>
-
+      <Page renderToolbar={this.renderToolbar}>
         <div style={{textAlign: 'center'}}>
           <br />
           <div

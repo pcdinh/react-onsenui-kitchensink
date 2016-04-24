@@ -22,11 +22,17 @@ class Home extends React.Component {
     this.props.navigator.pushPage({comp: component});
   }
 
+  renderToolbar() {
+    return (
+      <Toolbar>
+        <div className='center'>Home</div>
+      </Toolbar>
+    );
+  }
+
   render() {
     return (
-      <Page>
-        <Toolbar><div className="center">Home</div></Toolbar>
-
+      <Page renderToolbar={this.renderToolbar}>
         <p style={{padding: '0 15px'}}>
           This is a kitchen sink example that shows off the React extension for Onsen UI.
         </p>

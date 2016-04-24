@@ -33,13 +33,17 @@ class Dialogs extends React.Component {
     this.props.navigator.pushPage({comp: Popovers});
   }
 
+  renderToolbar() {
+    return (
+      <Toolbar>
+        <div className='center'>Dialogs</div>
+      </Toolbar>
+    );
+  }
+
   render() {
     return (
-      <Page>
-        <Toolbar>
-          <div className="center">Dialogs</div>
-        </Toolbar>
-
+      <Page renderToolbar={this.renderToolbar}>
         <List
           dataSource={[
             <ListItem

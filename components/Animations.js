@@ -78,13 +78,17 @@ class Animations extends React.Component {
     }, {animation: transition});
   }
 
+  renderToolbar() {
+    return (
+      <Toolbar>
+        <div className='center'>Animations</div>
+      </Toolbar>
+    );
+  }
+
   render() {
     return (
-      <Page>
-        <Toolbar>
-          <div className="center">Animations</div>
-        </Toolbar>
-
+      <Page renderToolbar={this.renderToolbar}>
         <List
           renderHeader={() => <ListHeader>Transitions</ListHeader>}
           dataSource={['none', 'fade', 'slide']}

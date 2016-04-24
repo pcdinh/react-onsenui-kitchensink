@@ -21,19 +21,19 @@ var Tabs = React.createClass({
     return [
       {
         content: <Home navigator={this.props.navigator} />,
-        tab: ons.platform.isAndroid() ? <Tab label="Home" /> : <Tab label="Home" icon="ion-ios-home-outline" />
+        tab: <Tab label="Home" icon="ion-ios-home-outline" />
       },
       {
         content: <Dialogs navigator={this.props.navigator} />,
-        tab: ons.platform.isAndroid() ? <Tab label="Dialogs" /> : <Tab label="Dialogs" icon="ion-ios-albums-outline" />
+        tab: <Tab label="Dialogs" icon="ion-ios-albums-outline" />
       },
       {
         content: <Forms />,
-        tab: ons.platform.isAndroid() ? <Tab label="Forms" /> : <Tab label="Forms" icon="ion-edit" />
+        tab: <Tab label="Forms" icon="ion-edit" />
       },
       {
         content: <Animations navigator={this.props.navigator} />,
-        tab: ons.platform.isAndroid() ? <Tab label="Animations" /> : <Tab label="Animations" icon="ion-film-marker" />
+        tab: <Tab label="Animations" icon="ion-film-marker" />
       }
     ];
   },

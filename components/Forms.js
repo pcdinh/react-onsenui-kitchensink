@@ -52,13 +52,17 @@ class Forms extends React.Component {
     });
   }
 
+  renderToolbar() {
+    return (
+      <Toolbar>
+        <div className='center'>Forms</div>
+      </Toolbar>
+    );
+  }
+
   render() {
     return (
-      <Page>
-        <Toolbar>
-          <div className="center">Forms</div>
-        </Toolbar>
-
+      <Page renderToolbar={this.renderToolbar}>
         <List
           dataSource={[
             <ListItem>

@@ -54,6 +54,15 @@ class PullToRefresh extends React.Component {
     }
   }
 
+  renderToolbar() {
+    return (
+      <Toolbar>
+        <div className="left"><BackButton>Back</BackButton></div>
+        <div className="center">Pull to refresh</div>
+      </Toolbar>
+    );
+  }
+
   render() {
     let content;
     const state = this.state.pullHookState;
@@ -69,15 +78,10 @@ class PullToRefresh extends React.Component {
     }
 
     return (
-      <Page>
+      <Page renderToolbar={this.renderToolbar}>
         <PullHook onChange={this.handleChange.bind(this)} onLoad={this.handleLoad.bind(this)}>
           {content}
         </PullHook>
-        <Toolbar>
-          <div className="left"><BackButton>Back</BackButton></div>
-          <div className="center">Pull to refresh</div>
-        </Toolbar>
-
         <p style={{padding: '0 15px'}}>Pull down to generate some random numbers.</p>
 
         <List
