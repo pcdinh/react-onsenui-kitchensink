@@ -43,7 +43,7 @@ var Tabs = React.createClass({
 });
 
 var App = React.createClass({
-  renderScene: function(route, navigator) {
+  renderPage: function(route, navigator) {
     route.props = route.props || {};
     route.props.navigator = navigator;
 
@@ -54,7 +54,7 @@ var App = React.createClass({
     return (
       <Ons.Navigator
         initialRoute={{comp: Tabs}}
-        renderScene={this.renderScene}
+        renderPage={this.renderPage}
       />
     );
   }
