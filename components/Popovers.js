@@ -1,5 +1,11 @@
 import React from 'react';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Toolbar,
+  BackButton,
+  Popover
+} from 'react-onsenui';
 
 class Popovers extends React.Component {
   constructor(props) {
@@ -28,15 +34,15 @@ class Popovers extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
-        <Ons.Toolbar>
+      <Page>
+        <Toolbar>
           <div className="left">
-            <Ons.BackButton>Back</Ons.BackButton>
+            <BackButton>Back</BackButton>
           </div>
           <div className="center">
             Popovers
           </div>
-        </Ons.Toolbar>
+        </Toolbar>
 
         <div style={{textAlign: 'center'}}>
           <br />
@@ -53,7 +59,7 @@ class Popovers extends React.Component {
             Click me!
           </div>
         </div>
-        <Ons.Popover
+        <Popover
           direction="down"
           isOpen={this.state.isOpen}
           getTarget={this.getTarget.bind(this)}>
@@ -63,8 +69,8 @@ class Popovers extends React.Component {
           }}>
             I'm a popover!
           </div>
-        </Ons.Popover>
-      </Ons.Page>
+        </Popover>
+      </Page>
     );
   }
 }

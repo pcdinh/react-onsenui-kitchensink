@@ -1,12 +1,19 @@
 import React from 'react';
 
 import ons from 'onsenui';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Toolbar,
+  List,
+  ListItem,
+  ListHeader
+} from 'react-onsenui';
 
 import PullToRefresh from './PullToRefresh';
 import InfiniteScroll from './InfiniteScroll';
 import FloatingActionButton from './FloatingActionButton';
-import SpeedDial from './SpeedDial';
+import SpeedDials from './SpeedDials';
 
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
 
@@ -17,15 +24,15 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
-        <Ons.Toolbar><div className="center">Home</div></Ons.Toolbar>
+      <Page>
+        <Toolbar><div className="center">Home</div></Toolbar>
 
         <p style={{padding: '0 15px'}}>
           This is a kitchen sink example that shows off the React extension for Onsen UI.
         </p>
 
-        <Ons.List
-          renderHeader={() => <Ons.ListHeader>Components</Ons.ListHeader>}
+        <List
+          renderHeader={() => <ListHeader>Components</ListHeader>}
           dataSource={[{
             name: 'Pull to refresh',
             component: PullToRefresh
@@ -36,16 +43,16 @@ class Home extends React.Component {
             name: 'Floating action button',
             component: FloatingActionButton
           }, {
-            name: 'Speed dial',
-            component: SpeedDial
+            name: 'Speed dials',
+            component: SpeedDials
           }]}
           renderRow={(row) =>
-            <Ons.ListItem tappable onClick={this.gotoComponent.bind(this, row.component)}>
+            <ListItem tappable onClick={this.gotoComponent.bind(this, row.component)}>
               {row.name}
-            </Ons.ListItem>
+            </ListItem>
           }
         />
-      </Ons.Page>
+      </Page>
     );
   }
 }

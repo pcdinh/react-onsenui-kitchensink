@@ -1,7 +1,14 @@
 import React from 'react';
 
 import ons from 'onsenui';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Toolbar,
+  List,
+  ListItem,
+  ListHeader
+} from 'react-onsenui';
 
 const capitalize = (str) =>
   str.replace(/^[a-z]/, (c) => c.toUpperCase());
@@ -36,7 +43,7 @@ class MyPage extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
+      <Page>
         <div
           style={{
             textAlign: 'center',
@@ -54,7 +61,7 @@ class MyPage extends React.Component {
             {this.state.counter}
           </span>
          </div>
-      </Ons.Page>
+      </Page>
     );
   }
 }
@@ -73,23 +80,23 @@ class Animations extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
-        <Ons.Toolbar>
+      <Page>
+        <Toolbar>
           <div className="center">Animations</div>
-        </Ons.Toolbar>
+        </Toolbar>
 
-        <Ons.List
-          renderHeader={() => <Ons.ListHeader>Transitions</Ons.ListHeader>}
+        <List
+          renderHeader={() => <ListHeader>Transitions</ListHeader>}
           dataSource={['none', 'fade', 'slide']}
           renderRow={(row) =>
-            <Ons.ListItem
+            <ListItem
               tappable
               onClick={this.pushPage.bind(this, row)}>
               {capitalize(row)}
-            </Ons.ListItem>
+            </ListItem>
           }
         />
-      </Ons.Page>
+      </Page>
     );
   }
 }

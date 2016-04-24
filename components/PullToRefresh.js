@@ -1,5 +1,14 @@
 import React from 'react';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  PullHook,
+  Toolbar,
+  BackButton,
+  List,
+  ListItem,
+  ListHeader
+} from 'react-onsenui';
 
 class PullToRefresh extends React.Component {
   constructor(props) {
@@ -60,23 +69,23 @@ class PullToRefresh extends React.Component {
     }
 
     return (
-      <Ons.Page>
-        <Ons.PullHook onChange={this.handleChange.bind(this)} onLoad={this.handleLoad.bind(this)}>
+      <Page>
+        <PullHook onChange={this.handleChange.bind(this)} onLoad={this.handleLoad.bind(this)}>
           {content}
-        </Ons.PullHook>
-        <Ons.Toolbar>
-          <div className="left"><Ons.BackButton>Back</Ons.BackButton></div>
+        </PullHook>
+        <Toolbar>
+          <div className="left"><BackButton>Back</BackButton></div>
           <div className="center">Pull to refresh</div>
-        </Ons.Toolbar>
+        </Toolbar>
 
         <p style={{padding: '0 15px'}}>Pull down to generate some random numbers.</p>
 
-        <Ons.List
+        <List
           dataSource={this.state.data}
-          renderHeader={() => <Ons.ListHeader>Data</Ons.ListHeader>}
-          renderRow={(row) => <Ons.ListItem>{row}</Ons.ListItem>}
+          renderHeader={() => <ListHeader>Data</ListHeader>}
+          renderRow={(row) => <ListItem>{row}</ListItem>}
         />
-      </Ons.Page>
+      </Page>
     );
   }
 }

@@ -1,7 +1,16 @@
 import React from 'react';
 
 import ons from 'onsenui';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Toolbar,
+  List,
+  ListHeader,
+  ListItem,
+  Switch,
+  Input
+} from 'react-onsenui';
 
 class Forms extends React.Component {
   constructor(props) {
@@ -45,93 +54,93 @@ class Forms extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
-        <Ons.Toolbar>
+      <Page>
+        <Toolbar>
           <div className="center">Forms</div>
-        </Ons.Toolbar>
+        </Toolbar>
 
-        <Ons.List
+        <List
           dataSource={[
-            <Ons.ListItem>
+            <ListItem>
               <div className="center">
                 Switch ({this.state.switchEnabled ? 'on' : 'off'})
               </div>
               <div className="right">
-                <Ons.Switch
+                <Switch
                   checked={this.state.switchEnabled}
                   onChange={this.handleSwitchChange.bind(this)}
                 />
               </div>
-            </Ons.ListItem>,
-            <Ons.ListItem>
+            </ListItem>,
+            <ListItem>
               <div className="center">
                 Disabled switch
               </div>
               <div className="right">
-                <Ons.Switch disabled />
+                <Switch disabled />
               </div>
-            </Ons.ListItem>
+            </ListItem>
           ]}
-          renderHeader={() => <Ons.ListHeader>Switches</Ons.ListHeader>}
+          renderHeader={() => <ListHeader>Switches</ListHeader>}
           renderRow={(row) => row}
         />
 
-        <Ons.List
+        <List
           dataSource={this.state.vegetables}
-          renderHeader={() => <Ons.ListHeader>Radio buttons</Ons.ListHeader>}
-          renderFooter={() => <Ons.ListItem>I love&nbsp;{this.state.selectedVegetable}!</Ons.ListItem>}
+          renderHeader={() => <ListHeader>Radio buttons</ListHeader>}
+          renderFooter={() => <ListItem>I love&nbsp;{this.state.selectedVegetable}!</ListItem>}
           renderRow={(vegetable, index) => {
             return (
-              <Ons.ListItem tappable>
+              <ListItem tappable>
                 <label className="left">
-                  <Ons.Input input-id={'radio' + index} name="vegetable" onChange={this.setVegetable.bind(this, vegetable)} checked={this.state.selectedVegetable === vegetable} type="radio" />
+                  <Input input-id={'radio' + index} name="vegetable" onChange={this.setVegetable.bind(this, vegetable)} checked={this.state.selectedVegetable === vegetable} type="radio" />
                 </label>
                 <label htmlFor={'radio' + index} className="center">
                   {vegetable}
                 </label>
-              </Ons.ListItem>
+              </ListItem>
             );
           }}
         />
 
-        <Ons.List
+        <List
           dataSource={this.state.colors}
-          renderHeader={() => <Ons.ListHeader>Checkboxes</Ons.ListHeader>}
+          renderHeader={() => <ListHeader>Checkboxes</ListHeader>}
           renderRow={(color, index) => {
             return (
-              <Ons.ListItem tappable>
+              <ListItem tappable>
                 <label className="left">
-                  <Ons.Input input-id={'checkbox' + index} type="checkbox" />
+                  <Input input-id={'checkbox' + index} type="checkbox" />
                 </label>
                 <label htmlFor={'checkbox' + index} className="center">
                   {color}
                 </label>
-              </Ons.ListItem>
+              </ListItem>
             );
           }}
         />
 
-        <Ons.List
+        <List
           dataSource={[0, 1]}
-          renderHeader={() => <Ons.ListHeader>Text input</Ons.ListHeader>}
+          renderHeader={() => <ListHeader>Text input</ListHeader>}
           renderRow={(_, index) => {
             if (index === 0) {
               return (
-                <Ons.ListItem>
-                  <Ons.Input value={this.state.name} onChange={this.handleNameChange.bind(this)} placeholder="Name" float />
-                </Ons.ListItem>
+                <ListItem>
+                  <Input value={this.state.name} onChange={this.handleNameChange.bind(this)} placeholder="Name" float />
+                </ListItem>
               );
             }
             else {
               return (
-                <Ons.ListItem>
+                <ListItem>
                   Hello&nbsp;{this.state.name}!
-                </Ons.ListItem>
+                </ListItem>
               );
             }
           }}
         />
-      </Ons.Page>
+      </Page>
     );
   }
 }

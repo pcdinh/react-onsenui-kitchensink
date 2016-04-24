@@ -1,7 +1,16 @@
 import React from 'react';
 
 import ons from 'onsenui';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Toolbar,
+  List,
+  ListItem,
+  ListHeader,
+  Dialog,
+  Button
+} from 'react-onsenui';
 
 import Popovers from './Popovers';
 
@@ -26,64 +35,64 @@ class Dialogs extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
-        <Ons.Toolbar>
+      <Page>
+        <Toolbar>
           <div className="center">Dialogs</div>
-        </Ons.Toolbar>
+        </Toolbar>
 
-        <Ons.List
+        <List
           dataSource={[
-            <Ons.ListItem
+            <ListItem
               tappable
               onClick={this.toggleDialog.bind(this)}>
               Show dialog ({this.state.dialogOpen ? 'open' : 'closed'})
-            </Ons.ListItem>,
-            <Ons.ListItem onClick={this.showPopovers.bind(this)}>
+            </ListItem>,
+            <ListItem onClick={this.showPopovers.bind(this)}>
               Popovers
-            </Ons.ListItem>
+            </ListItem>
           ]}
-          renderHeader={() => <Ons.ListHeader>Dialogs</Ons.ListHeader>}
+          renderHeader={() => <ListHeader>Dialogs</ListHeader>}
           renderRow={(row) => row}
         />
 
-        <Ons.List
+        <List
           dataSource={[
-            <Ons.ListItem
+            <ListItem
               tappable
               onClick={ons.notification.alert.bind(null, 'Hello, world!')}>
               Alert dialog
-            </Ons.ListItem>,
-            <Ons.ListItem
+            </ListItem>,
+            <ListItem
               tappable
               onClick={ons.notification.confirm.bind(null, {
                 message: 'Do you like React?',
                 buttonLabels: ['Yes!', 'Of course!']
               })}>
               Confirmation dialog
-            </Ons.ListItem>,
-            <Ons.ListItem
+            </ListItem>,
+            <ListItem
               tappable
               onClick={ons.notification.prompt.bind(null, {
                 message: 'What is your name?'
               })}>
               Prompt dialog
-            </Ons.ListItem>
+            </ListItem>
           ]}
-          renderHeader={() => <Ons.ListHeader>Notifications</Ons.ListHeader>}
+          renderHeader={() => <ListHeader>Notifications</ListHeader>}
           renderRow={(row) => row}
         />
 
-        <Ons.Dialog
+        <Dialog
           style={{textAlign: 'center'}}
           isOpen={this.state.dialogOpen}
           onCancel={this.toggleDialog.bind(this)}
           cancelable>
           <p>I am a dialog!</p>
           <p>
-            <Ons.Button disabled={!this.state.dialogOpen} onClick={this.toggleDialog.bind(this)}>Close me!</Ons.Button>
+            <Button disabled={!this.state.dialogOpen} onClick={this.toggleDialog.bind(this)}>Close me!</Button>
           </p>
-        </Ons.Dialog>
-      </Ons.Page>
+        </Dialog>
+      </Page>
     );
   }
 }

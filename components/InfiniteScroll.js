@@ -1,6 +1,12 @@
 import React from 'react';
 import ons from 'onsenui';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Toolbar,
+  BackButton,
+  LazyList
+} from 'react-onsenui';
 
 class InfiniteScroll extends React.Component {
   renderRow(index) {
@@ -11,22 +17,22 @@ class InfiniteScroll extends React.Component {
 
   render() {
     return (
-      <Ons.Page>
-        <Ons.Toolbar>
+      <Page>
+        <Toolbar>
           <div className="left">
-            <Ons.BackButton>Back</Ons.BackButton>
+            <BackButton>Back</BackButton>
           </div>
           <div className="center">
             Infinite scroll
           </div>
-        </Ons.Toolbar>
+        </Toolbar>
 
-        <Ons.LazyList
+        <LazyList
           length={10000}
           renderRow={this.renderRow}
           calculateItemHeight={() => ons.platform.isAndroid() ? 55 : 44}
         />
-      </Ons.Page>
+      </Page>
     );
   }
 }

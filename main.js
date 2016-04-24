@@ -2,7 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ons from 'onsenui';
-import Ons from 'react-onsenui';
+
+import {
+  Page,
+  Tabbar,
+  Tab,
+  Navigator
+} from 'react-onsenui';
+
 
 import Home from './components/Home';
 import Dialogs from './components/Dialogs';
@@ -14,30 +21,30 @@ var Tabs = React.createClass({
     return [
       {
         content: <Home navigator={this.props.navigator} />,
-        tab: ons.platform.isAndroid() ? <Ons.Tab label="Home" /> : <Ons.Tab label="Home" icon="ion-ios-home-outline" />
+        tab: ons.platform.isAndroid() ? <Tab label="Home" /> : <Tab label="Home" icon="ion-ios-home-outline" />
       },
       {
         content: <Dialogs navigator={this.props.navigator} />,
-        tab: ons.platform.isAndroid() ? <Ons.Tab label="Dialogs" /> : <Ons.Tab label="Dialogs" icon="ion-ios-albums-outline" />
+        tab: ons.platform.isAndroid() ? <Tab label="Dialogs" /> : <Tab label="Dialogs" icon="ion-ios-albums-outline" />
       },
       {
         content: <Forms />,
-        tab: ons.platform.isAndroid() ? <Ons.Tab label="Forms" /> : <Ons.Tab label="Forms" icon="ion-edit" />
+        tab: ons.platform.isAndroid() ? <Tab label="Forms" /> : <Tab label="Forms" icon="ion-edit" />
       },
       {
         content: <Animations navigator={this.props.navigator} />,
-        tab: ons.platform.isAndroid() ? <Ons.Tab label="Animations" /> : <Ons.Tab label="Animations" icon="ion-film-marker" />
+        tab: ons.platform.isAndroid() ? <Tab label="Animations" /> : <Tab label="Animations" icon="ion-film-marker" />
       }
     ];
   },
 
   render: function() {
     return (
-      <Ons.Page>
-        <Ons.Tabbar
+      <Page>
+        <Tabbar
           renderTabs={this.renderTabs}
         />
-      </Ons.Page>
+      </Page>
     );
   }
 });
@@ -52,7 +59,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <Ons.Navigator
+      <Navigator
         initialRoute={{comp: Tabs}}
         renderPage={this.renderPage}
       />
