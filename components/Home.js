@@ -3,10 +3,10 @@ import React from 'react';
 import ons from 'onsenui';
 import Ons from 'react-onsenui';
 
-import PullToRefresh from './pullToRefresh';
-import InfiniteScroll from './infiniteScroll';
-import FloatingActionButton from './floatingActionButton';
-import SpeedDial from './speedDial';
+import PullToRefresh from './PullToRefresh';
+import InfiniteScroll from './InfiniteScroll';
+import FloatingActionButton from './FloatingActionButton';
+import SpeedDial from './SpeedDial';
 
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
 

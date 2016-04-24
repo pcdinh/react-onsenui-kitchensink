@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import ons from 'onsenui';
 import Ons from 'react-onsenui';
 
-import Home from './components/home';
-import Dialogs from './components/dialogs';
-import Forms from './components/forms';
-import Animations from './components/animations';
+import Home from './components/Home';
+import Dialogs from './components/Dialogs';
+import Forms from './components/Forms';
+import Animations from './components/Animations';
 
 var Tabs = React.createClass({
   renderTabs: function() {

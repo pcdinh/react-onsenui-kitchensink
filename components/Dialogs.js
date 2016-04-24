@@ -3,7 +3,7 @@ import React from 'react';
 import ons from 'onsenui';
 import Ons from 'react-onsenui';
 
-import Popovers from './popovers';
+import Popovers from './Popovers';
 
 class Dialogs extends React.Component {
   constructor(props) {
