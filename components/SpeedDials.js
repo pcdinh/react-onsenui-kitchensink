@@ -23,7 +23,7 @@ class SpeedDials extends React.Component {
   render() {
     return (
       <Page renderToolbar={this.renderToolbar}>
-        <p>A speed dial is a Floating action button that expands into a menu.</p>
+        <p style={{padding: '0 15px'}}>A speed dial is a Floating action button that expands into a menu.</p>
 
         <SpeedDial position="right bottom" direction="up">
           <Fab>
