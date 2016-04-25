@@ -37,7 +37,7 @@ class InfiniteScroll extends React.Component {
         <LazyList
           length={10000}
           renderRow={this.renderRow}
-          calculateItemHeight={() => ons.platform.isAndroid() ? 76 : 45}
+          calculateItemHeight={() => ons.platform.isAndroid() ? 77 : 45}
         />
       </Page>
     );
