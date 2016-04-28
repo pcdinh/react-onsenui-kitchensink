@@ -73,9 +73,9 @@ class Animations extends React.Component {
     nav.pushPage({
       comp: MyPage,
       props: {
-        popPage: () => nav.popPage({animation: transition})
+        popPage: () => nav.popPage({animation: transition, animationOptions: {duration: 0.8}})
       }
-    }, {animation: transition});
+    }, {animation: transition, animationOptions: {duration: 0.8}});
   }
 
   renderToolbar() {
