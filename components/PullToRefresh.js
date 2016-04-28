@@ -4,6 +4,7 @@ import {
   Page,
   PullHook,
   Toolbar,
+  Icon,
   BackButton,
   List,
   ListItem,
@@ -108,7 +109,7 @@ class PullToRefresh extends React.Component {
       content = 'Release';
     }
     else {
-      content = 'Loading';
+      content = <Icon icon='spinner' spin />;
     }
 
     return (
