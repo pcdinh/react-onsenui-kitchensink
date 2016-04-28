@@ -32,7 +32,7 @@ class MyPage extends React.Component {
           this.props.popPage();
         }
       });
-    }, 200);
+    }, 400);
   }
 
   componentWillUnmount() {
