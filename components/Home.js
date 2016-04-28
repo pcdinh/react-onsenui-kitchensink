@@ -12,6 +12,7 @@ import {
 
 import PullToRefresh from './PullToRefresh';
 import InfiniteScroll from './InfiniteScroll';
+import SideMenu from './SideMenu';
 import FloatingActionButton from './FloatingActionButton';
 import SpeedDials from './SpeedDials';
 
@@ -45,6 +46,9 @@ class Home extends React.Component {
           }, {
             name: 'Infinite scroll',
             component: InfiniteScroll
+          }, {
+            name: 'Side menu',
+            component: SideMenu
           }, {
             name: 'Floating action button',
             component: FloatingActionButton
