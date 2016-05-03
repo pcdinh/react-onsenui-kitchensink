@@ -87,12 +87,11 @@ class Dialogs extends React.Component {
         />
 
         <Dialog
-          style={{textAlign: 'center'}}
           isOpen={this.state.dialogOpen}
           onCancel={this.toggleDialog.bind(this)}
           cancelable>
-          <p>I am a dialog!</p>
-          <p>
+          <p style={{textAlign: 'center'}}>I am a dialog!</p>
+          <p style={{textAlign: 'center'}}>
             <Button disabled={!this.state.dialogOpen} onClick={this.toggleDialog.bind(this)}>Close me!</Button>
           </p>
         </Dialog>
