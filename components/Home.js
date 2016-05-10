@@ -38,6 +38,10 @@ class Home extends React.Component {
           This is a kitchen sink example that shows off the React extension for Onsen UI.
         </p>
 
+        <p style={{padding: '0 15px'}}>
+          <a href="https://onsen.io/v2/react.html" target="_blank"><strong>Official site with docs</strong></a>
+        </p>
+
         <List
           renderHeader={() => <ListHeader>Components</ListHeader>}
           dataSource={[{
