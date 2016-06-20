@@ -34,10 +34,10 @@
     "babelify": "^7.3.0",
     "http-server": "^0.9.0",
     "ncp": "^2.0.0",
-    "onsenui": "^2.0.0-rc.10",
+    "onsenui": "^2.0.0-rc.12",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-onsenui": "^0.4.1",
+    "react-onsenui": "^0.5.4",
     "watchify": "^3.7.0"
   }
 }
