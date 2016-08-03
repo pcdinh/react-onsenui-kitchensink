@@ -62,7 +62,7 @@ class SideMenu extends React.Component {
             isOpen={this.state.isOpen}
             onClose={this.hide.bind(this)}
             onOpen={this.show.bind(this)}
-            isCollapsed={true}
+            collapse={true}
             width={240}
             isSwipeable={true}>
             <Page>
