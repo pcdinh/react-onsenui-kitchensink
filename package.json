@@ -4,7 +4,7 @@
   "description": "Kitchen Sink example for Onsen UI 2.0 React extension.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run copy-css; watchify -vd -e main.js -o dist.js & http-server . -c 1",
+    "dev": "npm run copy-css; watchify -vd -e main.js -o dist.js & http-server . -c 1 -p 8888",
     "copy-css": "ncp node_modules/onsenui/css css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
