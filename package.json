@@ -4,9 +4,14 @@
   "description": "Kitchen Sink example for Onsen UI 2.0 React extension.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run copy-css; watchify -vd -e main.js -o dist.js & http-server . -c 1 -p 8888",
-    "copy-css": "ncp node_modules/onsenui/css css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run copy-css; ./node_modules/.bin/watchify -vd -e www/js/main.js -o www/js/dist.js && http-server ./www -c 1 -p 8888",
+    "copy-css": "./node_modules/.bin/ncp node_modules/onsenui/css www/css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run copy-css; npm run buildjs",
+    "buildjs": "browserify www/js/main.js -o www/js/dist.js -t [ babelify --presets [ es2015 react ] ]",
+    "dev:android": "npm run build && cordova run android",
+    "dev:ios": "npm run build && cordova run ios",
+    "device:android": "npm run build && cordova run android --device"
   },
   "browserify": {
     "transform": [
@@ -20,24 +25,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/argelius/react-onsenui-kitchensink.git"
+    "url": "git+https://github.com/pcdinh/react-onsenui-kitchensink.git"
   },
   "author": "Andreas Argelius <andreas@argeli.us>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/argelius/react-onsenui-kitchensink/issues"
+    "url": "https://github.com/OnsenUI/react-onsenui-kitchensink/issues"
   },
-  "homepage": "https://github.com/argelius/react-onsenui-kitchensink#readme",
+  "homepage": "https://github.com/OnsenUI/react-onsenui-kitchensink#readme",
   "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "babelify": "^7.3.0",
     "http-server": "^0.9.0",
     "ncp": "^2.0.0",
-    "onsenui": "^2.0.0-rc.15",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-onsenui": "^0.7.3",
+    "onsenui": "^2.0.4",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-onsenui": "^1.0.4",
     "watchify": "^3.7.0"
   }
 }
