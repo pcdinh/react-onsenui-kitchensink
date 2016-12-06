@@ -4,10 +4,10 @@
   "description": "Kitchen Sink example for Onsen UI 2.0 React extension.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run copy-css; ./node_modules/.bin/watchify -vd -e www/js/main.js -o www/js/dist.js && http-server ./www -c 1 -p 8888",
-    "copy-css": "./node_modules/.bin/ncp node_modules/onsenui/css www/css",
+    "dev": "npm run copy-css; watchify -vd -e www/js/main.js -o www/js/dist.js && http-server ./www -c 1 -p 8888",
+    "copy-css": "ncp node_modules/onsenui/css www/css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy-css; npm run buildjs",
+    "build": "npm run copy-css & npm run buildjs",
     "buildjs": "browserify www/js/main.js -o www/js/dist.js -t [ babelify --presets [ es2015 react ] ]",
     "dev:android": "npm run build && cordova run android",
     "dev:ios": "npm run build && cordova run ios",

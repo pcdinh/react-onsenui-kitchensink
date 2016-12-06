@@ -24,15 +24,30 @@ This will bundle all the files and open a web server at [http://localhost:8888](
 
 ```
 cd react-onsenui-kitchensink
-cordova platform add android
+cordova platform add android@4.1.2
 cordova platform add ios
 
 cordova requirements # to ensure that you have Android SDK or iOS SDK
+```
 
+Before compiling and running the app, ensure that you change the Android target
+at `platforms/android/AndroidManifest.xml`
+
+```
+<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+```
+
+To run on an emulator
+
+```
 npm run dev:android
 npm run dev:ios
+```
 
-npm run device:android # to deploy app on physical Android device
+To run a connected physical Android device
+
+```
+npm run device:android
 ```
 
 To suppress output when running npm scripts, use:

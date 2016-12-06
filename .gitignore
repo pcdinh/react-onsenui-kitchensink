@@ -38,3 +38,6 @@ node_modules
 
 # Generated source
 /www/js/dist.js
+
+# OnSei CSS
+/www/css/*
