@@ -24,17 +24,16 @@ This will bundle all the files and open a web server at [http://localhost:8888](
 
 ```
 cd react-onsenui-kitchensink
-cordova platform add android@4.1.2
+cordova platform add android
 cordova platform add ios
 
 cordova requirements # to ensure that you have Android SDK or iOS SDK
 ```
 
-Before compiling and running the app, ensure that you change the Android target
-at `platforms/android/AndroidManifest.xml`
+You may want to use Cordova's Crosswalk Webview plugin (2.2.0)
 
 ```
-<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+cordova plugin add cordova-plugin-crosswalk-webview
 ```
 
 To run on an emulator
@@ -50,8 +49,23 @@ To run a connected physical Android device
 npm run device:android
 ```
 
+## Note
+
 To suppress output when running npm scripts, use:
 
 ```
 npm config set loglevel warn
+```
+
+Before compiling and running the app, ensure that you change the Android target
+at `platforms/android/AndroidManifest.xml`
+
+```
+<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+```
+
+To remove Cordova's Crosswalk Webview plugin
+
+```
+cordova plugin remove cordova-plugin-crosswalk-webview
 ```
