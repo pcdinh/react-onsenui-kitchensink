@@ -69,3 +69,9 @@ To remove Cordova's Crosswalk Webview plugin
 ```
 cordova plugin remove cordova-plugin-crosswalk-webview
 ```
+
+You can use the latest Cordova Crosswalk plugin:
+
+```
+cordova plugin add https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview
+```

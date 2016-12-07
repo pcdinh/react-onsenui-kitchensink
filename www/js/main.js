@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import ons from 'onsenui';
@@ -16,8 +16,13 @@ import Dialogs from './components/Dialogs';
 import Forms from './components/Forms';
 import Animations from './components/Animations';
 
-var Tabs = React.createClass({
-  renderTabs: function() {
+class Tabs extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  renderTabs() {
     return [
       {
         content: <Home navigator={this.props.navigator} />,
@@ -36,35 +41,39 @@ var Tabs = React.createClass({
         tab: <Tab label="Animations" icon="ion-film-marker" />
       }
     ];
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <Page>
         <Tabbar
-          renderTabs={this.renderTabs}
+          renderTabs={this.renderTabs.bind(this)}
         />
       </Page>
     );
   }
-});
+}
 
-var App = React.createClass({
-  renderPage: function(route, navigator) {
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  renderPage(route, navigator) {
     route.props = route.props || {};
     route.props.navigator = navigator;
 
     return React.createElement(route.comp, route.props);
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <Navigator
         initialRoute={{comp: Tabs}}
-        renderPage={this.renderPage}
+        renderPage={this.renderPage.bind(this)}
       />
     );
   }
-});
+}
 
 ReactDOM.render(<App />, document.getElementById('app'));
